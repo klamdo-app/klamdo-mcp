@@ -1,6 +1,6 @@
 {
   "name": "klamdo-mcp",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "MCP server for Klamdo — AI content generation plus agentic package orchestration for coaches and creator-founders. Generate media, create packages, and hand structured deliverables to downstream AI agents.",
   "main": "dist/index.js",
   "bin": {

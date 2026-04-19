@@ -2,13 +2,11 @@
 /**
  * Klamdo MCP Server — Streamable HTTP transport
  *
- * Runs as a hosted service on mark-mini-s, exposed via Cloudflare Tunnel at:
- *   https://mcp.klamdo.app
+ * Endpoint: POST https://mcp.klamdo.app/mcp
+ * Auth:     Authorization: Bearer <klamdo-api-key>
+ * Get key:  https://klamdo.app/profile
  *
- * Each request is stateless. API key is read from Authorization: Bearer <key> header.
- * Users get their key from https://klamdo.app/profile
- *
- * Smithery URL: https://mcp.klamdo.app/mcp
+ * Each request is stateless. API key is read from the Authorization header.
  */
 
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
@@ -39,7 +37,7 @@ async function readBody(req: IncomingMessage): Promise<Buffer> {
 
 function createMcpServer(apiKey: string): Server {
   const server = new Server(
-    { name: "klamdo", version: "1.4.0" },
+    { name: "klamdo", version: "1.4.4" },
     { capabilities: { tools: {}, resources: {} } }
   );
   registerHandlers(server, () => apiKey);
@@ -52,7 +50,7 @@ const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse
   // Health check
   if (req.method === "GET" && url.pathname === "/health") {
     res.writeHead(200, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ ok: true, service: "klamdo-mcp", version: "1.4.0" }));
+    res.end(JSON.stringify({ ok: true, service: "klamdo-mcp", version: "1.4.4" }));
     return;
   }
 
@@ -113,7 +111,7 @@ const httpServer = createServer(async (req: IncomingMessage, res: ServerResponse
     res.writeHead(200, { "Content-Type": "application/json" });
     res.end(JSON.stringify({
       service: "Klamdo MCP Server",
-      version: "1.4.0",
+      version: "1.4.4",
       mcpEndpoint: "/mcp",
       docs: "https://klamdo.app/answers",
       getApiKey: "https://klamdo.app/profile"

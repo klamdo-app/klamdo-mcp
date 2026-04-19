@@ -1,16 +1,19 @@
-name: Klamdo — AI Content for Coaches & Creators
+name: Klamdo — AI Content Engine for Creators and Agents
 description: |
   Generate identity-locked 4K images and 5-second vertical videos from a single
-  reference photo. Built for coaches, consultants, and founder-creators who need
-  consistent personal brand content without filming.
+  reference photo — or connect your AI agent and generate full content packages:
+  scripts, captions, images, video, voiceover, ebook outlines, slide decks, and
+  landing page copy, all returned as a typed manifest your agent can act on.
 
-  Tools: generate_image, generate_video, check_job, get_account, list_jobs
+  Tools: generate_image, generate_video, upload_start_frame, check_job,
+  get_account, list_jobs, list_packages, create_package, get_package,
+  get_package_manifest
 
-  Requires a Klamdo API key — get yours free at https://klamdo.app/profile
+  Requires a Klamdo API key — get yours at https://klamdo.app/profile
 
-version: "1.2.1"
+version: "1.4.4"
 homepage: https://klamdo.app
-documentationUrl: https://klamdo.app/answers
+documentationUrl: https://github.com/klamdo-app/klamdo-mcp
 iconUrl: https://klamdo.app/favicon.ico
 
 startCommand:

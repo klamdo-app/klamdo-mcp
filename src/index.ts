@@ -28,7 +28,7 @@ if (!API_KEY) {
 
 async function main() {
   const server = new Server(
-    { name: "klamdo", version: "1.4.0" },
+    { name: "klamdo", version: "1.4.4" },
     { capabilities: { tools: {}, resources: {} } }
   );
 
