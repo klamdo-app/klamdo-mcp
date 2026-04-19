@@ -16,19 +16,20 @@ homepage: https://klamdo.app
 documentationUrl: https://github.com/klamdo-app/klamdo-mcp
 iconUrl: https://klamdo.app/favicon.ico
 
+configSchema:
+  type: object
+  properties:
+    apiKey:
+      type: string
+      title: Klamdo API Key
+      description: >
+        Your Klamdo API key. Sign up free at https://klamdo.app and copy
+        your key from the Profile page (https://klamdo.app/profile).
+  required:
+    - apiKey
+
 startCommand:
   type: http
   url: https://mcp.klamdo.app/mcp
-  configSchema:
-    type: object
-    properties:
-      apiKey:
-        type: string
-        title: Klamdo API Key
-        description: >
-          Your Klamdo API key. Sign up free at https://klamdo.app and copy
-          your key from the Profile page (https://klamdo.app/profile).
-    required:
-      - apiKey
   headers:
     Authorization: "Bearer {{config.apiKey}}"
