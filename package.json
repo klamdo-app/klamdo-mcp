@@ -1,0 +1,47 @@
+{
+  "name": "klamdo-mcp",
+  "version": "1.4.2",
+  "description": "MCP server for Klamdo — AI content generation plus agentic package orchestration for coaches and creator-founders. Generate media, create packages, and hand structured deliverables to downstream AI agents.",
+  "main": "dist/index.js",
+  "bin": {
+    "klamdo-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:http": "node dist/http.js",
+    "dev": "ts-node src/index.ts",
+    "dev:http": "ts-node src/http.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/klamdo-app/klamdo-mcp.git"
+  },
+  "homepage": "https://github.com/klamdo-app/klamdo-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/klamdo-app/klamdo-mcp/issues"
+  },
+  "author": "Klamdo <hello@klamdo.app> (https://klamdo.app)",
+  "keywords": [
+    "mcp",
+    "klamdo",
+    "ai-content",
+    "image-generation",
+    "video-generation",
+    "creator-tools",
+    "agentic",
+    "content-generation",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
